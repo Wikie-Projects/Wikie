@@ -3,13 +3,13 @@ const url = require("url");
 
 // Import the API modules
 const { getAllEvents, getEventById, createEvent } = require("./api/events");
-const { getAllUsers, getUserById } = require("./api/users");
+
 const {
-    getAllNotifications,
-    getNotificationById,
-    createNotification,
-    deleteNotification,
-} = require("./api/notifications");
+    getAllUsers,
+    getUserById,
+    createUser,
+    deleteUser,
+} = require("./api/users");
 const {
     getAllNotifications,
     getNotificationById,
