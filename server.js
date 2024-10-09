@@ -72,9 +72,20 @@ const server = http.createServer((req, res) => {
     ) {
         const id = parsedURL.pathname.split("/")[3];
         getNotificationById(req, res, id);
+    }
+
+    // Route for tickets
+    else if (parsedURL.pathname === "/api/tickets" && method === "GET") {
+        getAllTickets(req, res);
+    } else if (
+        parsedURL.pathname.startsWith("/api/tickets/") &&
+        method === "GET"
+    ) {
+        const id = parsedURL.pathname.split("/")[3];
+        getTicketById(req, res, id);
     } else {
         res.writeHead(404, { "Content-Type": "application/json" });
-        res.end(JSON.stringify({ message: "Route not found" }));
+        res.end(JSON.stringify({ message: "No Tickets Found" }));
     }
 });
 
