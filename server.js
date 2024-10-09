@@ -74,6 +74,7 @@ const server = http.createServer((req, res) => {
         getNotificationById(req, res, id);
     }
 
+    
     // Route for tickets
     else if (parsedURL.pathname === "/api/tickets" && method === "GET") {
         getAllTickets(req, res);
